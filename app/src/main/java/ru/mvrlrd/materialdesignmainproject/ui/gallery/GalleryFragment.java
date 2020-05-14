@@ -1,10 +1,17 @@
 package ru.mvrlrd.materialdesignmainproject.ui.gallery;
 
+import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -29,6 +36,28 @@ public class GalleryFragment extends Fragment {
 //                textView.setText(s);
 //            }
 //        });
+        final ImageView imageView = root.findViewById(R.id.imageView);
+
+//        Bitmap bm = null;
+//        try {
+//            bm = getBitmapFromAsset("mask.jpg");
+//            imageView.setImageBitmap(bm);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+
         return root;
+    }
+
+    private Bitmap getBitmapFromAsset(String strName) throws IOException
+    {
+        System.out.println(getActivity().toString());
+        if(getActivity()!=null) {
+            AssetManager assetManager = getActivity().getAssets();
+            InputStream istr = assetManager.open(strName);
+            Bitmap bitmap = BitmapFactory.decodeStream(istr);
+            return bitmap;
+        }
+        return null;
     }
 }
