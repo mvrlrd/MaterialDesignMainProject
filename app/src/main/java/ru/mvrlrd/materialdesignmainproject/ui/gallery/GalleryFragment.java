@@ -15,6 +15,7 @@ import java.io.InputStream;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
@@ -23,6 +24,7 @@ import ru.mvrlrd.materialdesignmainproject.R;
 public class GalleryFragment extends Fragment {
 
     private GalleryViewModel galleryViewModel;
+    private Toolbar toolbar;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -38,26 +40,7 @@ public class GalleryFragment extends Fragment {
 //        });
         final ImageView imageView = root.findViewById(R.id.imageView);
 
-//        Bitmap bm = null;
-//        try {
-//            bm = getBitmapFromAsset("mask.jpg");
-//            imageView.setImageBitmap(bm);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-
         return root;
     }
 
-    private Bitmap getBitmapFromAsset(String strName) throws IOException
-    {
-        System.out.println(getActivity().toString());
-        if(getActivity()!=null) {
-            AssetManager assetManager = getActivity().getAssets();
-            InputStream istr = assetManager.open(strName);
-            Bitmap bitmap = BitmapFactory.decodeStream(istr);
-            return bitmap;
-        }
-        return null;
-    }
 }
