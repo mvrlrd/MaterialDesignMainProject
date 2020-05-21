@@ -1,4 +1,4 @@
-package ru.mvrlrd.materialdesignmainproject.ui.slideshow;
+package ru.mvrlrd.materialdesignmainproject.ui.animals;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
