@@ -1,37 +1,26 @@
 package ru.mvrlrd.materialdesignmainproject.ui.animals;
-
-import android.content.res.Resources;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
 import ru.mvrlrd.materialdesignmainproject.R;
+import ru.mvrlrd.materialdesignmainproject.ui.Item;
+import ru.mvrlrd.materialdesignmainproject.ui.Model;
 
-public class ModelAnimals {
-    List<String> list;
-
+public class ModelAnimals extends Model {
 
     public ModelAnimals() {
-        this.list = new ArrayList<>();
-
-        list.add("кошка");
-        list.add("собака");
-        list.add("жираф");
-        list.add("птица");
-        list.add("тигр");
-        list.add("лев");
-        list.add("кит");
-        list.add("дельфин");
-        list.add("акула");
-        list.add("змея");
-        list.add("панголин");
-        list.add("росомаха");
-
-
+        super();
+        addItem(new Item("кошка",R.drawable.cat));
+        addItem(new Item("собака",R.drawable.dog));
+        addItem(new Item("жираф",R.drawable.giraffe));
+        addItem(new Item("птица",R.drawable.bird));
+        addItem(new Item("тигр",R.drawable.tiger));
+        addItem(new Item("лев",R.drawable.lion));
+        addItem(new Item("кит",R.drawable.whale));
+        addItem(new Item("дельфин",R.drawable.dolphin));
+        addItem(new Item("акула",R.drawable.shark));
+        addItem(new Item("змея",R.drawable.snake));
+        addItem(new Item("панголин",R.drawable.pangolin));
+        addItem(new Item("росомаха",R.drawable.rosomaha));
     }
 
-    public List<String> getList() {
-        return list;
-    }
+
+
 }

@@ -1,4 +1,4 @@
-package ru.mvrlrd.materialdesignmainproject.ui.gallery;
+package ru.mvrlrd.materialdesignmainproject.ui.plants;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

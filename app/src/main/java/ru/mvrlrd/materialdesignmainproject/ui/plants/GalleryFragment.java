@@ -1,25 +1,18 @@
-package ru.mvrlrd.materialdesignmainproject.ui.gallery;
+package ru.mvrlrd.materialdesignmainproject.ui.plants;
 
-import android.content.res.AssetManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
-
-import java.io.IOException;
-import java.io.InputStream;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import ru.mvrlrd.materialdesignmainproject.R;
+import ru.mvrlrd.materialdesignmainproject.ui.MyAdapter;
 
 public class GalleryFragment extends Fragment {
 
@@ -38,7 +31,15 @@ public class GalleryFragment extends Fragment {
 //                textView.setText(s);
 //            }
 //        });
-        final ImageView imageView = root.findViewById(R.id.imageView);
+//        final ImageView imageView = root.findViewById(R.id.imageView);
+
+        RecyclerView recyclerView = root.findViewById(R.id.recycler_view);
+//        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        GridLayoutManager layoutManager = new GridLayoutManager(getContext(), 1);
+        recyclerView.setLayoutManager(layoutManager);
+        MyAdapter myAdapter = new MyAdapter(new ModelPlants().itemList);
+        recyclerView.setAdapter(myAdapter);
+//        recyclerView.addItemDecoration(new ItemDivider(this));
 
         return root;
     }

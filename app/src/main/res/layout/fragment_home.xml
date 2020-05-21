@@ -7,7 +7,9 @@
     tools:context=".ui.home.HomeFragment">
 
     <include
-        layout="@layout/content_scrolling"/>
+        layout="@layout/content_scrolling"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="51dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
