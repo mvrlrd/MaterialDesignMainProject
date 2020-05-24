@@ -5,14 +5,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.tabs.TabLayout;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 import ru.mvrlrd.materialdesignmainproject.R;
 import ru.mvrlrd.materialdesignmainproject.ui.MyAdapter;
+import ru.mvrlrd.materialdesignmainproject.ui.plants.tabs.SectionsPagerAdapter;
 
 public class GalleryFragment extends Fragment {
 
@@ -33,12 +38,20 @@ public class GalleryFragment extends Fragment {
 //        });
 //        final ImageView imageView = root.findViewById(R.id.imageView);
 
-        RecyclerView recyclerView = root.findViewById(R.id.recycler_view);
-//        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        GridLayoutManager layoutManager = new GridLayoutManager(getContext(), 1);
-        recyclerView.setLayoutManager(layoutManager);
-        MyAdapter myAdapter = new MyAdapter(new ModelPlants().itemList);
-        recyclerView.setAdapter(myAdapter);
+        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
+        ViewPager viewPager = root.findViewById(R.id.view_pager);
+        viewPager.setAdapter(sectionsPagerAdapter);
+        TabLayout tabs = root.findViewById(R.id.tabs);
+        tabs.setupWithViewPager(viewPager);
+        
+
+
+//        RecyclerView recyclerView = root.findViewById(R.id.recycler_view);
+////        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+//        GridLayoutManager layoutManager = new GridLayoutManager(getContext(), 1);
+//        recyclerView.setLayoutManager(layoutManager);
+//        MyAdapter myAdapter = new MyAdapter(new ModelPlants().itemList);
+//        recyclerView.setAdapter(myAdapter);
 //        recyclerView.addItemDecoration(new ItemDivider(this));
 
         return root;
