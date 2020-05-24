@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -43,11 +44,25 @@ public class PlaceholderFragment extends Fragment {
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_main, container, false);
-        final TextView textView = root.findViewById(R.id.section_label);
+//        final TextView textView = root.findViewById(R.id.section_label);
+        final ImageView imageView = root.findViewById(R.id.imageView2);
         pageViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
-                textView.setText(s);
+                if(s.endsWith("1")){
+                    imageView.setImageResource(R.drawable.banan);
+                }
+                if(s.endsWith("2")){
+                    imageView.setImageResource(R.drawable.rose);
+                }
+                if(s.endsWith("3")){
+                    imageView.setImageResource(R.drawable.avocado);
+                }
+                if(s.endsWith("4")){
+                    imageView.setImageResource(R.drawable.baobab);
+                }
+//                textView.setText(s);
+                System.out.println(s);
             }
         });
         return root;

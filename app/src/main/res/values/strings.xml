@@ -87,4 +87,8 @@
 Проданой за бугор, пока дома в лабораториях из её же отходов\n
 Путём обработки гонят в народ тот самый наркотик, что называется Гор?
     </string>
+    <string name="tab_text_1">banana</string>
+    <string name="tab_text_2">rose</string>
+    <string name="tab_text_3">avocado</string>
+    <string name="tab_text_4">baobab</string>
 </resources>
