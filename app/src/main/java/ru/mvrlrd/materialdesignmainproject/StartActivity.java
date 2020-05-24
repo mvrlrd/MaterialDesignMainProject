@@ -45,4 +45,7 @@ public class StartActivity extends AppCompatActivity {
             snackbar.show();
         }
     }
+    public void close(View view){
+        finish();
+    }
 }
